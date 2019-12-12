@@ -1,26 +1,30 @@
 package handlers
 
 import (
+	"encoding/json"
 	"github.com/kuznetsovin/go.geojson"
 	"github.com/labstack/echo"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"simple-tracking/backend/models"
 	"time"
 )
 
-func createReq(httpMethod, endpoint, urlParams string) *http.Request {
+func createReq(httpMethod, endpoint, urlParams string, body io.Reader) *http.Request {
 	target := endpoint
 	if urlParams != "" {
 		target += "?" + urlParams
 	}
-	req := httptest.NewRequest(httpMethod, target, nil)
+	req := httptest.NewRequest(httpMethod, target, body)
 	req.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
 
 	return req
 }
 
-type mockStore struct{}
+type mockStore struct {
+	value interface{}
+}
 
 func (m *mockStore) GetLastVehiclePosition() (models.LastPositions, error) {
 	r := models.LastPositions{
@@ -65,8 +69,8 @@ func (m *mockStore) GetGeoObjects() (models.GeoObjects, error) {
 	return r, nil
 }
 
-func (m *mockStore) GetVehicleDict() (models.VehicleDict, error) {
-	r := models.VehicleDict{
+func (m *mockStore) GetVehicleDict() (models.Vehicles, error) {
+	r := models.Vehicles{
 		{GpsID: 1, GosNumber: "A777AA750"},
 		{GpsID: 2, GosNumber: "B777BB750"},
 	}
@@ -83,4 +87,14 @@ func (m *mockStore) GetObjectReport(client uint32, dateStart, dateEnd time.Time)
 		},
 	}
 	return r, nil
+}
+
+func (m *mockStore) AddVehicle(v models.VehicleRec) error {
+	r, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	m.value = string(r)
+	return nil
 }

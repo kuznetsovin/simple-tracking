@@ -14,7 +14,7 @@ func TestHandler_GeoObjects(t *testing.T) {
 
 	e := echo.New()
 	rec := httptest.NewRecorder()
-	req := createReq(http.MethodGet, endpoint, "")
+	req := createReq(http.MethodGet, endpoint, "", nil)
 	c := e.NewContext(req, rec)
 	h := &Handler{
 		DB: &mockStore{},

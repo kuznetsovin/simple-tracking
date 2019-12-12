@@ -45,6 +45,9 @@
 </div>
 <div class="manage-layout" id="widgets">
     <div class="row">
+        <button class="alert helper btn-dark btn-sm" id="addVehicleBtn">Добавить ТС</button>
+    </div>
+    <div class="row">
         <div class="alert helper layers">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="visibleTrack" checked>
@@ -77,9 +80,33 @@
         </div>
     </div>
 </div>
-<div id="popup" class="ol-popup">
-    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-    <div id="popup-content"></div>
+
+<div class="modal fade" tabindex="-1" role="dialog" style="display: none;" id="addVehicleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить ТС</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModalBtn">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="newVehicleGosNumber">Гос номер</label>
+                        <input type="text" class="form-control" id="newVehicleGosNumber" placeholder="Гос номер">
+                    </div>
+                    <div class="form-group">
+                        <label for="newVehicleGPS">Код устройства ГЛОНАСС</label>
+                        <input type="text" class="form-control" id="newVehicleGPS" placeholder="Код устройства ГЛОНАСС">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="saveVehicleBtn">Добавить</button>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

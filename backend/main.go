@@ -63,7 +63,8 @@ func main() {
 	api.GET("/last-positions", h.LastPosition)
 	api.GET("/tracks/:client", h.Track)
 	api.GET("/geo-objects", h.GeoObjects)
-	api.GET("/vehicle-dict", h.VehicleDict)
+	api.GET("/vehicle-dict", h.GetVehicles)
+	api.POST("/vehicle-dict", h.AddVehicle)
 
 	report := api.Group("/report")
 	report.GET("/object-dist/:client", h.ReportObjectDist)

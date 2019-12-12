@@ -14,6 +14,7 @@ import moment from 'moment';
 import TrackWidget from "./widgets/track";
 import GeoObjectWidget from "./widgets/geo-object";
 import ReportWidget from "./widgets/report";
+import AddVehicleWidget from "./widgets/add-vehicle";
 
 let ws = new WebSocket(WEBSOCKET_URL);
 
@@ -77,6 +78,7 @@ window.onbeforeunload = function () {
 window.onload = function () {
     (new TrackWidget(TrackLayer)).init();
     (new GeoObjectWidget(GeoObjectLayer)).init();
+    (new AddVehicleWidget()).init();
 
     let reportPanel = new ReportWidget(TrackLayer);
     reportPanel.init();
