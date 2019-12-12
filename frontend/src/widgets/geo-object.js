@@ -31,23 +31,6 @@ let GeoObjectWidget = function (geoObjectLayer) {
         _helperLabel.classList.replace("text-muted", "text-light");
     }
 
-    function _render() {
-        let widgets = document.getElementById("widgets");
-        let objectsWidget = document.createElement("div");
-        objectsWidget.classList.add('row');
-        objectsWidget.innerHTML = `<div class="alert helper geo-objects">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${_elementID}">
-                <label class="form-check-label" for="${_elementID}">
-                    <a href="#" id="objectsLabel" class="text-decoration-none text-muted"><small>Объекты</small> <i
-                                class="fa fa-caret-right"></i></a>
-                </label>
-                <div class="collapse" id="collapseObjectList"></div>
-            </div>
-        </div>`;
-        widgets.appendChild(objectsWidget);
-    }
-
     function _createObjectCheckbox(objID, objName) {
         let objectDiv = document.createElement('div');
         objectDiv.className = 'form-check';
@@ -73,8 +56,6 @@ let GeoObjectWidget = function (geoObjectLayer) {
     }
 
     this.init = function () {
-        _render();
-
         _objectCheckbox = document.getElementById(_elementID);
         _helperLabel = _objectCheckbox.parentElement.getElementsByTagName("a")[0];
         _objectList = _objectCheckbox.parentElement.getElementsByClassName("collapse")[0];

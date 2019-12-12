@@ -6,7 +6,80 @@
 </head>
 <body>
 <div id="map"></div>
-<div id="report-panel"></div>
-<div class="manage-layout" id="widgets"></div>
+<div id="report-panel">
+    <h5>Параметры отчета</h5>
+    <div class="content">
+        <div class="form-group row">
+            <label for="vehicleID" class="col-xs-1 col-form-label-sm">ТС</label>
+            <div class="col-md-5">
+                <select class="form-control form-control-sm" id="vehicleID"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="startDate" class="col-xs-1 col-form-label-sm">С&nbsp</label>
+            <div class="col-md-5">
+                <input type="datetime-local" class="form-control form-control-sm" id="startDate" value="">
+            </div>
+            <label for="endDate" class="col-xs-1 col-form-label-sm">&nbspпо&nbsp</label>
+            <div class="col-md-5">
+                <input type="datetime-local" class="form-control form-control-sm" id="endDate" value="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <a href="#" class="btn btn-primary" id="createTrack">Построить трек</a>
+        </div>
+        <div class="row">
+            <table class="table table-striped table-bordered table-sm table-responsive-sm" id="report-table">
+                <thead>
+                <tr>
+                    <th>Объект</th>
+                    <th>Время первого заеда</th>
+                    <th>Время последнего выезда</th>
+                    <th>Пробег (км)</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="manage-layout" id="widgets">
+    <div class="row">
+        <div class="alert helper layers">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="visibleTrack" checked>
+                <label class="form-check-label text-light" for="visibleTrack" id="trackLabel">
+                    <small>Трек</small>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="alert helper geo-objects">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="visibleObject">
+                <label class="form-check-label" for="visibleObject">
+                    <a href="#" id="objectsLabel" class="text-decoration-none text-muted"><small>Объекты</small> <i
+                                class="fa fa-caret-right"></i></a>
+                </label>
+                <div class="collapse" id="collapseObjectList"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="alert helper layers">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="visibleReportPanel">
+                <label class="form-check-label text-muted" for="visibleReportPanel" id="trackLabel">
+                    <small>Отчет</small>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+</div>
 </body>
 </html>

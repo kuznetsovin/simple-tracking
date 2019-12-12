@@ -10,24 +10,7 @@ let TrackWidget = function (trackLayer) {
         _helperLabel.classList.replace("text-muted", "text-light");
     }
 
-    function _render() {
-        let widgets = document.getElementById("widgets");
-        let trackWidget = document.createElement("div");
-        trackWidget.classList.add('row');
-        trackWidget.innerHTML = `<div class="alert helper layers">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${_elementID}" checked>
-                <label class="form-check-label text-light" for="${_elementID}" id="trackLabel">
-                    <small>Трек</small>
-                </label>
-            </div>
-        </div>`;
-        widgets.appendChild(trackWidget);
-    }
-
     this.init = function () {
-        _render();
-
         _trackCheckbox = document.getElementById(_elementID);
         _helperLabel = _trackCheckbox.parentElement.getElementsByTagName("label")[0];
 

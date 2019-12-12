@@ -14,8 +14,6 @@ let ReportWidget = function (trackLayer) {
     let _dateFormat = "YYYY-MM-DDTHH:mm:ss";
 
     this.init = function () {
-        _render();
-        _createPanel();
         _loadVehicleList();
 
         let endDate = moment();
@@ -66,60 +64,6 @@ let ReportWidget = function (trackLayer) {
     function _hidePanel() {
         _helperLabel.classList.replace("text-light", "text-muted");
         _reportPanel.style.zIndex = -1;
-    }
-
-    function _render() {
-        let widgets = document.getElementById("widgets");
-        let reportWidget = document.createElement("div");
-        reportWidget.classList.add('row');
-        reportWidget.innerHTML = `<div class="alert helper layers">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="${_elementID}">
-                <label class="form-check-label text-muted" for="${_elementID}" id="trackLabel">
-                    <small>Отчет</small>
-                </label>
-            </div>
-        </div>`;
-        widgets.appendChild(reportWidget);
-    }
-
-    function _createPanel() {
-        let panelWidget = document.getElementById(_reportPanelID);
-        panelWidget.innerHTML = `<h5>Параметры отчета</h5>
-    <div class="content">
-        <div class="form-group row">
-            <label for="${_vehicleSelectID}" class="col-xs-1 col-form-label-sm">ТС</label>
-            <div class="col-md-5">
-                <select class="form-control form-control-sm" id="${_vehicleSelectID}"></select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="${_startDateID}" class="col-xs-1 col-form-label-sm">С&nbsp</label>
-            <div class="col-md-5">
-                <input type="datetime-local" class="form-control form-control-sm" id="${_startDateID}" value="">
-            </div>
-            <label for="${_endDateID}" ="col-xs-1 col-form-label-sm">&nbspпо&nbsp</label>
-            <div class="col-md-5">
-                <input type="datetime-local" class="form-control form-control-sm" id="${_endDateID}" value="">
-            </div>
-        </div>
-        <div class="form-group row">
-            <a href="#" class="btn btn-primary" id="${_btnCreateID}">Построить трек</a>
-        </div>
-        <div class="row">
-            <table class="table table-striped table-bordered table-sm table-responsive-sm" id="${_reportTableID}">
-                <thead>
-                    <tr>
-                        <th>Объект</th>
-                        <th>Время первого заеда</th>
-                        <th>Время последнего выезда</th>
-                        <th>Пробег (км)</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>`;
     }
 
     function _loadVehicleList() {
