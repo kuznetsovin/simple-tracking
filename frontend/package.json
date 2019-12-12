@@ -1,0 +1,30 @@
+{
+  "name": "simple-tracking-app",
+  "version": "0.1.0",
+  "description": "Visualisation tracking map",
+  "scripts": {
+    "serve": "webpack-dev-server --config webpack.config.js --progress --colors --mode development",
+    "build": "webpack-cli --config webpack.config.js --mode production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.0.7",
+    "moment": "^2.24.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.2.3",
+    "webpack-command": "^0.3.0",
+    "webpack-dev-server": "^3.1.14",
+    "terser-webpack-plugin": "latest"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "ol": "^5.1.2"
+  }
+}

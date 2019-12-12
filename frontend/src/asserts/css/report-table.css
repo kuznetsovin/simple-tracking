@@ -1,0 +1,13 @@
+#report-table > thead, #report-table > tbody {
+    display: block;
+}
+
+#report-table > tbody {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 200px;
+}
+
+#report-table > tbody td, #report-table > thead th {
+    width: 25%;  /* Optional */
+}

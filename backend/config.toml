@@ -1,0 +1,12 @@
+service_name='map_ws'
+addr = "localhost:8081"
+db_conn = "postgresql://localhost:5432/skolkovo?sslmode=disable"
+log_level = "DEBUG"
+
+[broker]
+conn = "amqp://guest:guest@localhost:5672/"
+queue = "new_ws"
+prefetch_count = 1000
+prefetch_size = 0
+qos_global = true
+
