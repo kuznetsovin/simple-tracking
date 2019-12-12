@@ -14,8 +14,6 @@ let ReportWidget = function (trackLayer) {
     let _dateFormat = "YYYY-MM-DDTHH:mm:ss";
 
     this.init = function () {
-        _loadVehicleList();
-
         let endDate = moment();
         let startDate = moment([endDate.year(), endDate.month(), endDate.date()]);
 
@@ -57,6 +55,7 @@ let ReportWidget = function (trackLayer) {
     };
 
     function _showPanel() {
+        _loadVehicleList();
         _helperLabel.classList.replace("text-muted", "text-light");
         _reportPanel.style.zIndex = 3;
     }
@@ -68,6 +67,10 @@ let ReportWidget = function (trackLayer) {
 
     function _loadVehicleList() {
         let vehicleSelect = document.getElementById(_vehicleSelectID);
+
+        // очищаем список перед загрузкой
+        vehicleSelect.options.length = 0;
+
         axios.get(BACKEND_URL + "/vehicle-dict").then((response) => {
                 // заполняем выпадающий список
                 response.data.forEach((rec) => {
