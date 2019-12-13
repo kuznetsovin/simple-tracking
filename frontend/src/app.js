@@ -15,6 +15,7 @@ import TrackWidget from "./widgets/track";
 import GeoObjectWidget from "./widgets/geo-object";
 import ReportWidget from "./widgets/report";
 import AddVehicleWidget from "./widgets/add-vehicle";
+import AddGeoObjectWidget from "./widgets/add-geo-object";
 
 let ws = new WebSocket(WEBSOCKET_URL);
 
@@ -79,6 +80,7 @@ window.onload = function () {
     (new TrackWidget(TrackLayer)).init();
     (new GeoObjectWidget(GeoObjectLayer)).init();
     (new AddVehicleWidget()).init();
+    (new AddGeoObjectWidget()).init();
 
     let reportPanel = new ReportWidget(TrackLayer);
     reportPanel.init();
