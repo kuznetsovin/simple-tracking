@@ -6,6 +6,7 @@ import (
 
 type GeoObjectGateway interface {
 	GetGeoObjects() (GeoObjects, error)
+	AddObject(GeoObject) error
 }
 
 type GeoObjectCommon struct {
@@ -15,7 +16,7 @@ type GeoObjectCommon struct {
 
 type GeoObject struct {
 	GeoObjectCommon
-	Geom *geojson.Geometry
+	Geom *geojson.Geometry `json:"geom,omitempty"`
 }
 type GeoObjects []GeoObject
 
@@ -39,4 +40,10 @@ func (db *DB) GetGeoObjects() (GeoObjects, error) {
 	err = rows.Err()
 
 	return result, err
+}
+
+func (db *DB) AddObject(g GeoObject) error {
+	_, err := db.Exec(`insert into geo_object (name, geom) values ($1, st_setsrid(st_geomfromgeojson($2), 3857))`,
+		g.Name, g.Geom)
+	return err
 }

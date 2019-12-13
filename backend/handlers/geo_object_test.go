@@ -26,3 +26,25 @@ func TestHandler_GeoObjects(t *testing.T) {
 			strings.Trim(rec.Body.String(), "\n"))
 	}
 }
+
+func TestHandler_AddObject(t *testing.T) {
+	endpoint := "/geo-objects"
+
+	data := `{"name":"test","geom":{"type":"MultiPolygon","coordinates":[[[4156985.87172938,7495035.97343491],[4157066.06721206,7495009.08972197]]]},"properties":{}}`
+
+	e := echo.New()
+	rec := httptest.NewRecorder()
+	req := createReq(http.MethodPost, endpoint, "", strings.NewReader(data))
+	c := e.NewContext(req, rec)
+
+	mock := mockStore{}
+	h := &Handler{
+		DB: &mock,
+	}
+
+	if assert.NoError(t, h.AddObject(c)) {
+		assert.Equal(t, http.StatusCreated, rec.Code)
+		assert.Equal(t, `{"id":0,"name":"test","geom":{"type":"MultiPolygon","coordinates":[[[4156985.87172938,7495035.97343491],[4157066.06721206,7495009.08972197]]]}}`,
+			mock.value.(string))
+	}
+}

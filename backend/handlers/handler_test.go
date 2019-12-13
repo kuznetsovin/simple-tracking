@@ -98,3 +98,15 @@ func (m *mockStore) AddVehicle(v models.VehicleRec) error {
 	m.value = string(r)
 	return nil
 }
+
+func (m *mockStore) AddObject(o models.GeoObject) error {
+
+	r, err := json.Marshal(o)
+	if err != nil {
+		return err
+	}
+
+	m.value = string(r)
+
+	return err
+}

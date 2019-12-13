@@ -22,7 +22,9 @@ func (h *Handler) AddVehicle(c echo.Context) error {
 		return err
 	}
 
-	err := h.DB.AddVehicle(body)
+	if err := h.DB.AddVehicle(body); err != nil {
+		return err
+	}
 
-	return c.JSON(http.StatusCreated, err)
+	return c.JSON(http.StatusCreated, nil)
 }
