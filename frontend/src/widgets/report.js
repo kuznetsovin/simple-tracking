@@ -1,3 +1,11 @@
+/*
+File contains report widget which shows right panel for creating mileage report.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 import axios from "axios";
 import moment from "moment";
 import "../asserts/css/report-table.css";

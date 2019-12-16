@@ -1,3 +1,11 @@
+/*
+File contains button widget for appending geo object.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 import axios from "axios";
 
 let AddGeoObjectWidget = function () {

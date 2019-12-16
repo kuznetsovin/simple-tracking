@@ -1,3 +1,11 @@
+/*
+File describe handler for getting mileage by client by period.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package handlers
 
 import (

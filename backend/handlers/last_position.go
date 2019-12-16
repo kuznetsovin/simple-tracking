@@ -1,3 +1,11 @@
+/*
+File describe handler for working with last saved points.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package handlers
 
 import (

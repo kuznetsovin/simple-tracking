@@ -1,3 +1,11 @@
+/*
+File describe main handle structure which includes broker and db connection.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package handlers
 
 import (

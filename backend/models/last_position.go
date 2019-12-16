@@ -1,3 +1,11 @@
+/*
+File describe gateway for working with last points in database.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package models
 
 type LastPositionGateway interface {

@@ -1,3 +1,11 @@
+/*
+File contains track widget for showing historical track by click checkbox.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 let TrackWidget = function (trackLayer) {
     let _trackCheckbox, _helperLabel;
     let _elementID = 'visibleTrack';

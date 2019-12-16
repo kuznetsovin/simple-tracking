@@ -1,3 +1,11 @@
+/*
+File contains geo object widget which shows list geo object and display it in map layer.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 import axios from 'axios';
 import GeoJSON from "ol/format/GeoJSON";
 

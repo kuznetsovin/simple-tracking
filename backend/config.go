@@ -1,3 +1,11 @@
+/*
+File describe application configuration file structure.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package main
 
 import (

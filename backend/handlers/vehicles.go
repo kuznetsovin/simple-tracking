@@ -1,3 +1,11 @@
+/*
+File describe handlers for working with vehicles data.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package handlers
 
 import (

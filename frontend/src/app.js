@@ -1,3 +1,12 @@
+/*
+File contains main app initialization.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+License: MIT
+
+(c) Copyright by Igor Kuznetsov.
+*/
 import 'ol/ol.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './asserts/css/custom.css';

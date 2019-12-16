@@ -1,3 +1,11 @@
+/*
+File describe store data interface for weak relation handlers and database.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package models
 
 import (

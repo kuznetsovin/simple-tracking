@@ -1,3 +1,11 @@
+/*
+File describe handler function for append and read data about geo objects.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 package handlers
 
 import (

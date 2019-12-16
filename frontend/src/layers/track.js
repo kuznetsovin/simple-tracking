@@ -1,3 +1,12 @@
+/*
+File contains extended layers for display historical track.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
+
 import VectorLayer from "ol/layer/Vector";
 import {Vector} from "ol/source";
 import Feature from "ol/Feature";

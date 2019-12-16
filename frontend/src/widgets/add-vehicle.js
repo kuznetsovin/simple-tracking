@@ -1,3 +1,11 @@
+/*
+File contains button widget for appending vehicle.
+
+Author: Igor Kuznetsov
+Email: me@swe-notes.ru
+
+(c) Copyright by Igor Kuznetsov.
+*/
 import axios from "axios";
 
 let AddVehicleWidget = function () {
